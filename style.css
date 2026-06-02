@@ -635,6 +635,14 @@ a.contact__value:hover { color: var(--sand-deep); }
   white-space: nowrap;
 }
 
+.pricing__payment {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy-deep);
+  text-align: center;
+}
+
 .pricing__note {
   margin-top: clamp(20px, 3vw, 32px);
   font-size: 13px;
