@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stomatologie Kuchařová — zubní ordinace, Tovární 9, Znojmo. Středa–Pátek 8:00–12:00. Tel: 777 676 643." />
+  <title>Stomatologie Kuchařová — Znojmo</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="stage">
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="hero__logo-wrap">
+      <img
+        class="hero__logo"
+        src="Document.png"
+        alt="Stomatologie Kuchařová"
+      />
+    </div>
+    <a class="scroll-cue" href="#kontakt" aria-label="Přejít na kontakt">
+      <span>Kontakt</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </a>
+  </header>
+
+  <!-- ============ POJIŠŤOVNY ============ -->
+  <section class="insurances">
+    <p class="insurances__label">Smluvní pojišťovny</p>
+    <div class="insurances__viewport">
+      <div class="insurances__track">
+        <div class="insurances__item">
+          <img class="insurances__logo" src="images/insurance/vzp.png" alt="VZP" />
+          <span class="insurances__abbr">VZP</span>
+        </div>
+        <div class="insurances__item">
+          <img class="insurances__logo" src="images/insurance/vozp.svg" alt="VoZP" />
+          <span class="insurances__abbr">VoZP</span>
+        </div>
+        <div class="insurances__item">
+          <img class="insurances__logo" src="images/insurance/cpzp.svg" alt="ČPZP" />
+          <span class="insurances__abbr">ČPZP</span>
+        </div>
+        <div class="insurances__item">
+          <img class="insurances__logo" src="images/insurance/ozp.svg" alt="OZP" />
+          <span class="insurances__abbr">OZP</span>
+        </div>
+        <div class="insurances__item">
+          <img class="insurances__logo" src="images/insurance/zpmvcr.svg" alt="ZP MV ČR" />
+          <span class="insurances__abbr">ZP MV ČR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INFO ============ -->
+  <section class="info" id="kontakt">
+    <div class="info__inner">
+      <p class="info__eyebrow">Kde nás najdete</p>
+      <h2 class="info__title">Kontaktní informace</h2>
+
+      <div class="grid">
+
+        <!-- contact card -->
+        <div class="card contact">
+          <ul class="contact__list">
+            <li class="contact__item">
+              <span class="contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <div>
+                <div class="contact__label">Adresa</div>
+                <a class="contact__value" href="https://maps.google.com/?q=Tovární+9+Znojmo" target="_blank" rel="noopener">Tovární 9, Znojmo</a>
+              </div>
+            </li>
+
+            <li class="contact__item">
+              <span class="contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 4h3.5l1.5 4.5L8 11a12 12 0 0 0 5 5l2.5-2 4.5 1.5V20a1.5 1.5 0 0 1-1.6 1.5C9.6 21 3 14.4 3 6.1A1.5 1.5 0 0 1 4.5 4Z" />
+                </svg>
+              </span>
+              <div>
+                <div class="contact__label">Telefon</div>
+                <a class="contact__value" href="tel:+420777676643">+420 777 676 643</a>
+              </div>
+            </li>
+
+            <li class="contact__item">
+              <span class="contact__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2.5" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+              </span>
+              <div>
+                <div class="contact__label">E-mail</div>
+                <div class="email-row">
+                  <a class="contact__value" href="mailto:stomatologkucharova@gmail.com">stomatologkucharova@gmail.com</a>
+                  <button
+                    class="copy-btn"
+                    id="copyEmailBtn"
+                    title="Kopírovat e-mail"
+                    aria-label="Kopírovat e-mail do schránky"
+                  >
+                    <!-- copy icon (default) -->
+                    <svg id="copyIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="9" y="9" width="13" height="13" rx="2" />
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                    </svg>
+                    <!-- check icon (shown after copy) -->
+                    <svg id="checkIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <!-- opening hours — visually distinct block -->
+          <div class="hours">
+            <div class="hours__head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3.5 2" />
+              </svg>
+              <h3>Otevírací doba</h3>
+            </div>
+            <div class="hours__row">
+              <span class="hours__days">Středa – Pátek</span>
+              <span class="hours__time">8:00 – 12:00</span>
+            </div>
+            <p class="hours__note">Od 24.5. do 27.5. Volno</p>
+          </div>
+        </div>
+
+        <!-- interactive map (Leaflet + OpenStreetMap) -->
+        <div class="map" id="mapa"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CENÍK ============ -->
+  <section class="pricing" id="cenik">
+    <div class="pricing__inner">
+      <p class="info__eyebrow">Orientační ceny</p>
+      <h2 class="info__title">Ceník</h2>
+
+      <div class="pricing__grid">
+
+        <div class="card pricing__card">
+          <h3 class="pricing__cat">Preventivní péče</h3>
+          <ul class="pricing__list">
+            <li class="pricing__row">
+              <span class="pricing__name">Vstupní vyšetření</span>
+              <span class="pricing__price">500 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Kontrolní vyšetření</span>
+              <span class="pricing__price">300 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Dentální hygiena</span>
+              <span class="pricing__price">800–1 200 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">RTG snímek</span>
+              <span class="pricing__price">200–400 Kč</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card pricing__card">
+          <h3 class="pricing__cat">Výplně</h3>
+          <ul class="pricing__list">
+            <li class="pricing__row">
+              <span class="pricing__name">Kompozitní výplň (bílá)</span>
+              <span class="pricing__price">800–1 500 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Amalgámová výplň</span>
+              <span class="pricing__price">500–800 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Výplň dočasného zubu</span>
+              <span class="pricing__price">300–600 Kč</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card pricing__card">
+          <h3 class="pricing__cat">Endodoncie</h3>
+          <ul class="pricing__list">
+            <li class="pricing__row">
+              <span class="pricing__name">Ošetření kořenového kanálku</span>
+              <span class="pricing__price">2 000–4 000 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Přeléčení kanálku</span>
+              <span class="pricing__price">2 500–5 000 Kč</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card pricing__card">
+          <h3 class="pricing__cat">Chirurgie</h3>
+          <ul class="pricing__list">
+            <li class="pricing__row">
+              <span class="pricing__name">Extrakce zubu</span>
+              <span class="pricing__price">500–1 000 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Chirurgická extrakce</span>
+              <span class="pricing__price">1 000–2 500 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Extrakce osmičky</span>
+              <span class="pricing__price">1 500–3 000 Kč</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card pricing__card">
+          <h3 class="pricing__cat">Protetika</h3>
+          <ul class="pricing__list">
+            <li class="pricing__row">
+              <span class="pricing__name">Keramická korunka</span>
+              <span class="pricing__price">5 000–8 000 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Korunka na implantátu</span>
+              <span class="pricing__price">6 000–10 000 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Snímatelná protéza</span>
+              <span class="pricing__price">15 000–25 000 Kč</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card pricing__card">
+          <h3 class="pricing__cat">Estetická stomatologie</h3>
+          <ul class="pricing__list">
+            <li class="pricing__row">
+              <span class="pricing__name">Bělení zubů (domácí)</span>
+              <span class="pricing__price">3 000–5 000 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Bělení zubů (ordinační)</span>
+              <span class="pricing__price">5 000–8 000 Kč</span>
+            </li>
+            <li class="pricing__row">
+              <span class="pricing__name">Keramická fazeta</span>
+              <span class="pricing__price">8 000–15 000 Kč</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="pricing__note">Ceny jsou orientační. Přesná cena závisí na rozsahu ošetření a bude upřesněna při vyšetření.</p>
+    </div>
+  </section>
+
+  </div><!-- /.stage -->
+
+  <footer class="footer">
+    <strong>Stomatologie Kuchařová</strong> &nbsp;·&nbsp; Tovární 9, Znojmo
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
