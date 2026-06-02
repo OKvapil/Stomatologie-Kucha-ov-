@@ -39,7 +39,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 32px 24px 96px;
+  padding: 32px 24px 160px;
   text-align: center;
   background:
     radial-gradient(ellipse at 50% 46%, var(--sand) 0%, transparent 62%),
@@ -81,6 +81,56 @@ body {
 @keyframes rise {
   from { opacity: 0; transform: translateY(18px) scale(.985); }
   to   { opacity: 1; transform: none; }
+}
+
+.hero__hours-title {
+  position: relative;
+  z-index: 1;
+  margin-top: -60px;
+  margin-bottom: 6px;
+  font-size: clamp(26px, 4vw, 38px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--navy-deep);
+  animation: rise 1.1s cubic-bezier(.16,.84,.36,1) 0.15s both;
+}
+
+.hero__hours {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  padding: 11px 22px;
+  box-shadow: 0 4px 24px rgba(33, 56, 88, 0.10);
+  font-size: 15px;
+  color: var(--navy-deep);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  animation: rise 1.1s cubic-bezier(.16,.84,.36,1) 0.2s both;
+}
+.hero__hours svg {
+  width: 16px;
+  height: 16px;
+  color: var(--sand-deep);
+  flex-shrink: 0;
+}
+.hero__hours-sep {
+  color: var(--sand);
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 1;
+  opacity: 0.7;
+}
+.hero__hours-time {
+  font-weight: 700;
+  color: var(--navy);
 }
 
 .scroll-cue {
@@ -413,7 +463,7 @@ a.contact__value:hover { color: var(--sand-deep); }
 }
 /* Leaflet popup brand styling */
 .leaflet-popup-content-wrapper {
-  border-radius: 14px !important;
+  border-radius: 14px 14px 14px 14px !important;
   box-shadow: 0 12px 32px rgba(33,56,88,0.22) !important;
   font-family: 'DM Sans', system-ui, sans-serif !important;
   padding: 0 !important;
@@ -422,9 +472,10 @@ a.contact__value:hover { color: var(--sand-deep); }
   margin: 14px 36px 14px 18px !important;
   line-height: 1.5 !important;
 }
+.leaflet-popup-tip-container { margin-top: -8px !important; transform: translateY(-6px) !important; }
 .leaflet-popup-tip { background: #fff !important; }
 .leaflet-popup-close-button {
-  top: 8px !important;
+  top: 12px !important;
   right: 8px !important;
 }
 .leaflet-control-zoom a {
