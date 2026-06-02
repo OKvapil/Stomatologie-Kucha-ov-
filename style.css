@@ -440,10 +440,14 @@ a.contact__value:hover { color: var(--sand-deep); }
   padding: 0 !important;
 }
 .leaflet-popup-content {
-  margin: 14px 18px !important;
+  margin: 14px 36px 14px 18px !important;
   line-height: 1.5 !important;
 }
 .leaflet-popup-tip { background: #fff !important; }
+.leaflet-popup-close-button {
+  top: 8px !important;
+  right: 8px !important;
+}
 .leaflet-control-zoom a {
   font-family: system-ui !important;
   color: var(--navy) !important;
