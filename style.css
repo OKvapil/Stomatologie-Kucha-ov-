@@ -41,32 +41,11 @@ body {
   justify-content: center;
   padding: 32px 24px 96px;
   text-align: center;
-  background: #ffffff;
-  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 46%, var(--sand) 0%, transparent 62%),
+    radial-gradient(ellipse at 50% 46%, var(--sand-light) 0%, transparent 80%),
+    var(--cream-soft);
   overflow: hidden;
-}
-
-/* soft centred beige glow — mirrors the React radial-gradient overlay with mix-blend-mode multiply */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at center, var(--sand) 0%, transparent 70%);
-  opacity: 0.55;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at center, var(--sand-light) 0%, transparent 55%);
-  opacity: 0.4;
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 0;
 }
 
 .hero__logo-wrap {
