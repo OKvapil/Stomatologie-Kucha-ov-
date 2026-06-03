@@ -571,6 +571,113 @@ a.contact__value:hover { color: var(--sand-deep); }
   border-radius: 999px;
 }
 
+/* ---- ABSENCE CARD ---- */
+.absence {
+  margin-top: clamp(20px, 3vw, 28px);
+  padding: clamp(24px, 3.5vw, 36px) clamp(24px, 3.5vw, 40px);
+}
+
+.absence__header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.absence__icon {
+  flex: 0 0 auto;
+  width: 40px; height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--cream);
+  color: var(--navy);
+}
+.absence__icon svg { width: 20px; height: 20px; }
+
+.absence__header h3 {
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 600;
+  color: var(--navy-deep);
+  letter-spacing: -0.01em;
+}
+
+.absence__intro {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin-bottom: clamp(18px, 2.5vw, 26px);
+}
+
+.absence__locs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 3vw, 40px);
+}
+
+.absence__loc {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+}
+
+.absence__pin {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--sand-deep);
+}
+.absence__pin svg { width: 18px; height: 18px; }
+
+.absence__loc-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.absence__loc-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy-deep);
+}
+
+.absence__loc-addr {
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.absence__loc-label {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.absence__tel {
+  font-weight: 700;
+  color: var(--navy-deep);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.absence__tel:hover { color: var(--sand-deep); }
+
+.absence__loc-note {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 3px;
+  line-height: 1.45;
+}
+
+@media (max-width: 560px) {
+  .absence__locs {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
 /* ---- CENÍK ---- */
 .pricing {
   padding: clamp(24px, 3vw, 40px) 24px clamp(72px, 10vw, 140px);
